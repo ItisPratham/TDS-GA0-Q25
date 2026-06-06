@@ -77,7 +77,7 @@ def get_metrics(req: MetricsRequest):
         if r not in grouped:
             grouped[r] = {"latencies": [], "uptimes": []}
         grouped[r]["latencies"].append(record["latency_ms"])
-        grouped[r]["uptimes"].append(record["uptime"])
+        grouped[r]["uptimes"].append(record["uptime_pct"])
 
     result = {}
     for region in req.regions:
